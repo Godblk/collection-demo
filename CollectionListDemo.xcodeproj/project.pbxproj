@@ -13,8 +13,9 @@
 		241532FB2013055000393B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241532FA2013055000393B93 /* Assets.xcassets */; };
 		241532FE2013055000393B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241532FC2013055000393B93 /* LaunchScreen.storyboard */; };
 		241533012013055000393B93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 241533002013055000393B93 /* main.m */; };
-		241533092013069F00393B93 /* CSCCardFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 241533082013069F00393B93 /* CSCCardFlowLayout.m */; };
-		2415330C201306FF00393B93 /* CSCCardDecorationReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415330B201306FF00393B93 /* CSCCardDecorationReusableView.m */; };
+		2415331E20130D5C00393B93 /* JHCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415331920130D5B00393B93 /* JHCollectionReusableView.m */; };
+		2415331F20130D5C00393B93 /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415331B20130D5B00393B93 /* JHCollectionViewFlowLayout.m */; };
+		2415332020130D5C00393B93 /* JHCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415331D20130D5C00393B93 /* JHCollectionViewLayoutAttributes.m */; };
 		797B2B052B7C34F64E98AB58 /* libPods-CollectionListDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A7B9EF42F7B10DCAC67F6E /* libPods-CollectionListDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -30,10 +31,12 @@
 		241532FD2013055000393B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		241532FF2013055000393B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		241533002013055000393B93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		241533072013069F00393B93 /* CSCCardFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCCardFlowLayout.h; sourceTree = "<group>"; };
-		241533082013069F00393B93 /* CSCCardFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCCardFlowLayout.m; sourceTree = "<group>"; };
-		2415330A201306FF00393B93 /* CSCCardDecorationReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCCardDecorationReusableView.h; sourceTree = "<group>"; };
-		2415330B201306FF00393B93 /* CSCCardDecorationReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCCardDecorationReusableView.m; sourceTree = "<group>"; };
+		2415331820130D5B00393B93 /* JHCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionReusableView.h; sourceTree = "<group>"; };
+		2415331920130D5B00393B93 /* JHCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionReusableView.m; sourceTree = "<group>"; };
+		2415331A20130D5B00393B93 /* JHCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		2415331B20130D5B00393B93 /* JHCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		2415331C20130D5B00393B93 /* JHCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		2415331D20130D5C00393B93 /* JHCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
 		57DF9DADE0FB0438D1379622 /* Pods-CollectionListDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionListDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionListDemo/Pods-CollectionListDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		63A7B9EF42F7B10DCAC67F6E /* libPods-CollectionListDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollectionListDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,6 +74,7 @@
 		241532F02013054F00393B93 /* CollectionListDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2415331720130D5B00393B93 /* Class */,
 				241532F12013054F00393B93 /* AppDelegate.h */,
 				241532F22013054F00393B93 /* AppDelegate.m */,
 				241532F42013054F00393B93 /* ViewController.h */,
@@ -80,12 +84,21 @@
 				241532FC2013055000393B93 /* LaunchScreen.storyboard */,
 				241532FF2013055000393B93 /* Info.plist */,
 				241533002013055000393B93 /* main.m */,
-				241533072013069F00393B93 /* CSCCardFlowLayout.h */,
-				241533082013069F00393B93 /* CSCCardFlowLayout.m */,
-				2415330A201306FF00393B93 /* CSCCardDecorationReusableView.h */,
-				2415330B201306FF00393B93 /* CSCCardDecorationReusableView.m */,
 			);
 			path = CollectionListDemo;
+			sourceTree = "<group>";
+		};
+		2415331720130D5B00393B93 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				2415331820130D5B00393B93 /* JHCollectionReusableView.h */,
+				2415331920130D5B00393B93 /* JHCollectionReusableView.m */,
+				2415331A20130D5B00393B93 /* JHCollectionViewFlowLayout.h */,
+				2415331B20130D5B00393B93 /* JHCollectionViewFlowLayout.m */,
+				2415331C20130D5B00393B93 /* JHCollectionViewLayoutAttributes.h */,
+				2415331D20130D5C00393B93 /* JHCollectionViewLayoutAttributes.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		4F36C9C38B959D7EEA00F9C9 /* Frameworks */ = {
@@ -231,10 +244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				241532F62013054F00393B93 /* ViewController.m in Sources */,
+				2415332020130D5C00393B93 /* JHCollectionViewLayoutAttributes.m in Sources */,
+				2415331E20130D5C00393B93 /* JHCollectionReusableView.m in Sources */,
 				241533012013055000393B93 /* main.m in Sources */,
+				2415331F20130D5C00393B93 /* JHCollectionViewFlowLayout.m in Sources */,
 				241532F32013054F00393B93 /* AppDelegate.m in Sources */,
-				2415330C201306FF00393B93 /* CSCCardDecorationReusableView.m in Sources */,
-				241533092013069F00393B93 /* CSCCardFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
