@@ -17,6 +17,7 @@
 		2415331F20130D5C00393B93 /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415331B20130D5B00393B93 /* JHCollectionViewFlowLayout.m */; };
 		2415332020130D5C00393B93 /* JHCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415331D20130D5C00393B93 /* JHCollectionViewLayoutAttributes.m */; };
 		797B2B052B7C34F64E98AB58 /* libPods-CollectionListDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A7B9EF42F7B10DCAC67F6E /* libPods-CollectionListDemo.a */; };
+		9F8880AA20142D2F0008C5AB /* ItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8880A920142D2F0008C5AB /* ItemController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		2415331D20130D5C00393B93 /* JHCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
 		57DF9DADE0FB0438D1379622 /* Pods-CollectionListDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionListDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionListDemo/Pods-CollectionListDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		63A7B9EF42F7B10DCAC67F6E /* libPods-CollectionListDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollectionListDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8880A820142D2F0008C5AB /* ItemController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemController.h; sourceTree = "<group>"; };
+		9F8880A920142D2F0008C5AB /* ItemController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				241532FC2013055000393B93 /* LaunchScreen.storyboard */,
 				241532FF2013055000393B93 /* Info.plist */,
 				241533002013055000393B93 /* main.m */,
+				9F8880A820142D2F0008C5AB /* ItemController.h */,
+				9F8880A920142D2F0008C5AB /* ItemController.m */,
 			);
 			path = CollectionListDemo;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8880AA20142D2F0008C5AB /* ItemController.m in Sources */,
 				241532F62013054F00393B93 /* ViewController.m in Sources */,
 				2415332020130D5C00393B93 /* JHCollectionViewLayoutAttributes.m in Sources */,
 				2415331E20130D5C00393B93 /* JHCollectionReusableView.m in Sources */,

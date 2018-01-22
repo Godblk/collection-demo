@@ -19,4 +19,13 @@
         self.backgroundColor = attr.backgroundColor;
     }
 }
+
+- (void)drawRect:(CGRect)rect {
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:4];
+    maskLayer.path = path.CGPath;
+    maskLayer.backgroundColor = [UIColor clearColor].CGColor;
+    self.layer.mask = maskLayer;
+    
+}
 @end

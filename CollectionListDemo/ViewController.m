@@ -7,11 +7,16 @@
 //
 
 #import "ViewController.h"
+#import <Masonry.h>
+#import "ItemController.h"
+#import <IGListKit/IGListKit.h>
 #import "JHCollectionViewFlowLayout.h"
 
 @interface ViewController ()
-<UICollectionViewDataSource, UICollectionViewDelegate, JHCollectionViewDelegateFlowLayout>
+<IGListAdapterDataSource, JHCollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) IGListAdapter *adpter;
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation ViewController
@@ -21,38 +26,35 @@
     // Do any additional setup after loading the view, typically from a nib.
     JHCollectionViewFlowLayout *jhFlowLayout = [[JHCollectionViewFlowLayout alloc] init];
     jhFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    jhFlowLayout.itemSize = CGSizeMake(50, 50);
     jhFlowLayout.minimumInteritemSpacing = 30;
     jhFlowLayout.minimumLineSpacing = 30;
-    jhFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
+    self.dataArray =@[@"asdad",@"sdfsf",@"tryy"];
     _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:jhFlowLayout];
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
+    
     [self.view addSubview:_collectionView];
     
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
+    
+    self.adpter.collectionView = _collectionView;
+    self.adpter.dataSource = self;
+    self.adpter.collectionView.delegate = self;
 }
 
 
 #pragma mark - UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 3;
+- (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
+    return self.dataArray;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 13;
-}
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor whiteColor];
-    
-    return cell;
+- (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
+    ItemController *controller = [[ItemController alloc] init];
+    return controller;
 }
 
+- (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {
+    return nil;
+}
 #pragma mark - JHCollectionViewDelegateFlowLayout
 - (UIColor *)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout backgroundColorForSection:(NSInteger)section
 {
@@ -63,6 +65,15 @@
               ] objectAtIndex:section];
 }
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(20, 20, 20, 20);
+}
 
-
+- (IGListAdapter *)adpter {
+    if (!_adpter) {
+        _adpter = [[IGListAdapter alloc] initWithUpdater:[[IGListAdapterUpdater alloc] init] viewController:self];
+        
+    }
+    return _adpter;
+}
 @end

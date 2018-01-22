@@ -60,15 +60,15 @@ NSString *const JHCollectionViewSectionBackground = @"JHCollectionViewSectionBac
 
         
         CGRect sectionFrame = CGRectUnion(firstItem.frame, lastItem.frame);
-        sectionFrame.origin.x -= sectionInset.left;
-        sectionFrame.origin.y -= sectionInset.top;
+        sectionFrame.origin.x -= sectionInset.left/2;
+        sectionFrame.origin.y -= sectionInset.top/2;
         
         if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-            sectionFrame.size.width += sectionInset.left + sectionInset.right;
+            sectionFrame.size.width += sectionInset.left/2 + sectionInset.right/2;
             sectionFrame.size.height = self.collectionView.frame.size.height;
         } else {
-            sectionFrame.size.width = self.collectionView.frame.size.width;
-            sectionFrame.size.height += sectionInset.top + sectionInset.bottom;
+            sectionFrame.size.width = self.collectionView.frame.size.width-sectionInset.left/2-sectionInset.right/2;
+            sectionFrame.size.height += sectionInset.top/2 + sectionInset.bottom/2;
         }
         
         // 2、定义
